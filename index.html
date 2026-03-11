@@ -1,12 +1,215 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yash Shrivastava</title>
+    <meta name="description" content="Yash Shrivastava — Software Engineer, Researcher, Builder.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Ewert&family=Instrument+Serif&family=Instrument+Sans:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0a0a;
+            color: #d6d0c5;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .page {
+            max-width: 640px;
+            width: 100%;
+            animation: appear 1.8s ease both;
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .name {
+            font-family: 'Instrument Serif', serif;
+            font-weight: 400;
+            font-size: clamp(2.8rem, 8vw, 4.5rem);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: #f0ece6;
+            text-align: center;
+            line-height: 1;
+            margin-bottom: 2.5rem;
+        }
+
+        .rule {
+            border: none;
+            border-top: 1px solid rgba(214, 208, 197, 0.15);
+            margin-bottom: 2.5rem;
+        }
+
+        .bio {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 300;
+            font-size: clamp(1.05rem, 2.2vw, 1.25rem);
+            line-height: 1.75;
+            color: #c4bdb0;
+            text-align: justify;
+            hyphens: auto;
+        }
+
+        /* — Drop cap (SVG stroke animation) — */
+        .drop-cap-svg {
+            float: left;
+            width: 80px;
+            height: 95px;
+            margin-right: 0.08em;
+            margin-top: 0.02em;
+            shape-outside: margin-box;
+            overflow: visible;
+        }
+
+        .drop-cap-svg text {
+            font-family: 'Ewert', serif;
+            font-size: 120px;
+            fill: transparent;
+            stroke: #f0ece6;
+            stroke-width: 1.2;
+            stroke-dasharray: 900;
+            stroke-dashoffset: 900;
+            animation:
+                strokeWrite 3s cubic-bezier(0.45, 0.05, 0.55, 0.95) 0.8s forwards,
+                fillIn 1.2s ease 3.4s forwards;
+        }
+
+        @keyframes strokeWrite {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        @keyframes fillIn {
+            0% {
+                fill: transparent;
+                stroke-width: 1.2;
+            }
+
+            100% {
+                fill: #f0ece6;
+                stroke-width: 0;
+            }
+        }
+
+        .bio .first-line {
+            font-variant: small-caps;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            font-weight: 400;
+            color: #d6d0c5;
+        }
+
+        .bio a {
+            color: #ddd7cc;
+            text-decoration: none;
+            font-weight: 600;
+            font-style: normal;
+            border-bottom: 1px solid rgba(221, 215, 204, 0.3);
+            transition: border-color 0.3s ease;
+        }
+
+        .bio a:hover {
+            border-bottom-color: rgba(221, 215, 204, 0.7);
+        }
+
+        .footer-rule {
+            border: none;
+            border-top: 1px solid rgba(214, 208, 197, 0.15);
+            margin-top: 2.5rem;
+        }
+
+        .footer {
+            margin-top: 1.5rem;
+            text-align: center;
+            font-family: 'Instrument Serif';
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: rgba(214, 208, 197, 0.441);
+        }
+
+        @media (max-width: 480px) {
+            .drop-cap-svg {
+                width: 70px;
+                height: 80px;
+                margin-right: 0.05em;
+            }
+
+            .drop-cap-svg text {
+                font-size: 30vw;
+            }
+
+            .name {
+                margin-bottom: 2rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Hello, I'm Yash Shrivastava.</h1>
+    <div class="page">
+        <h1 class="name">Yash <br> Shrivastava</h1>
+
+        <hr class="rule">
+
+        <p class="bio">
+            <svg class="drop-cap-svg" viewBox="0 -5 80 120" xmlns="http://www.w3.org/2000/svg">
+                <text x="0" y="105">I</text>
+            </svg>
+            am a Software Engineer at J.P. Morgan, where I work for their
+            <a href="https://www.jpmorgan.com/investment-banking" target="_blank" rel="noopener">Corporate &amp;
+                Investment Banking</a> (CIB)
+            Line of Business. I joined JPM full-time in 2024 after working for a Summer and a Winter as an Intern at
+            JPM's CIB.
+            Previously, I was a Research Intern at the
+            <a href="https://www.cmu.edu/cbd/" target="_blank" rel="noopener">Ray and Stephanie Lane Computational
+                Biology Department</a>
+            at Carnegie Mellon University,
+            where I conducted research on 3D Computer Vision applied to Cryo-Electron Tomography.
+            Prior to that, I worked with the
+            <a href="https://iitdh.ac.in/~sraut/BioM3D_Lab/biom3d_index.html" target="_blank" rel="noopener">BioM3D
+                Research Lab</a>
+            under <a href="https://iitdh.ac.in/~sraut" target="_blank" rel="noopener">Dr.&nbsp;Samarth Raut</a>
+            at the Indian Institute of Technology Dharwad across multiple research stints in 2022 and 2023.
+            My research there focused on combining 3D Computer Vision with Computational Bio-mechanics
+            to analyze and model soft biological materials. My publication record can be found <a
+                href="https://docs.google.com/document/d/150oj2Mb2LgWkKwVIhbwtl_qfvtx-Qe9t1LpOiwhWEbg/edit?usp=sharing"
+                target="_blank" rel="noopener">here</a>.
+        </p>
+
+        <hr class="footer-rule">
+        <p class="footer"><a href="mailto:hello@yashshrivastava.com"
+                style="color: inherit; text-decoration: none;">hello@yashshrivastava.com</a></p>
+    </div>
 </body>
 
 </html>
